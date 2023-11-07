@@ -30,8 +30,8 @@ abstract class WaveformPaintersFactory extends CustomPainter {
 /// This types of waveform painters draws the active part of the waveform of
 /// the audio being played.
 
-abstract class ActiveWaveformPainter extends WaveformPaintersFactory {
-  ActiveWaveformPainter({
+abstract class ActivePainterFactory extends WaveformPaintersFactory {
+  ActivePainterFactory({
     required super.color,
     required super.sampleWidth,
     required this.activeSamples,
@@ -52,7 +52,7 @@ abstract class ActiveWaveformPainter extends WaveformPaintersFactory {
   final Color borderColor;
 
   /// Get shouldRepaintValue
-  bool getShouldRepaintValue(covariant ActiveWaveformPainter oldDelegate) {
+  bool getShouldRepaintValue(covariant ActivePainterFactory oldDelegate) {
     return !checkForSamplesEquality(activeSamples, oldDelegate.activeSamples) ||
         color != oldDelegate.color ||
         sampleWidth != oldDelegate.sampleWidth ||
@@ -63,7 +63,7 @@ abstract class ActiveWaveformPainter extends WaveformPaintersFactory {
 
   /// Whether the waveform should be rePainted or not.
   @override
-  bool shouldRepaint(covariant ActiveWaveformPainter oldDelegate) {
+  bool shouldRepaint(covariant ActivePainterFactory oldDelegate) {
     return getShouldRepaintValue(oldDelegate);
   }
 }
@@ -71,8 +71,8 @@ abstract class ActiveWaveformPainter extends WaveformPaintersFactory {
 /// A Painter class that all other InActiveWaveform Painters extend to.
 /// This types of waveform painters draws the whole waveform of the audio
 /// being played.
-abstract class InActiveWaveformPainter extends WaveformPaintersFactory {
-  InActiveWaveformPainter({
+abstract class InActivePainterFactory extends WaveformPaintersFactory {
+  InActivePainterFactory({
     required super.color,
     required super.samples,
     required super.sampleWidth,
@@ -88,7 +88,7 @@ abstract class InActiveWaveformPainter extends WaveformPaintersFactory {
   final Color borderColor;
 
   /// Get shouldRepaintValue
-  bool getShouldRepaintValue(covariant InActiveWaveformPainter oldDelegate) {
+  bool getShouldRepaintValue(covariant InActivePainterFactory oldDelegate) {
     return !checkForSamplesEquality(samples, oldDelegate.samples) ||
         color != oldDelegate.color ||
         sampleWidth != oldDelegate.sampleWidth ||
@@ -99,7 +99,7 @@ abstract class InActiveWaveformPainter extends WaveformPaintersFactory {
 
   /// Whether the waveform should be rePainted or not.
   @override
-  bool shouldRepaint(covariant InActiveWaveformPainter oldDelegate) {
+  bool shouldRepaint(covariant InActivePainterFactory oldDelegate) {
     return getShouldRepaintValue(oldDelegate);
   }
 }
@@ -107,8 +107,8 @@ abstract class InActiveWaveformPainter extends WaveformPaintersFactory {
 /// A Painter class that all other ActiveInActiveWaveform Painters extend to.
 /// The members of this class are essential to draw any waveform that manages
 /// the painting of both active and inActive waveform within itself.
-abstract class ActiveInActiveWaveformPainter extends WaveformPaintersFactory {
-  ActiveInActiveWaveformPainter({
+abstract class ActiveInActivePainterFactory extends WaveformPaintersFactory {
+  ActiveInActivePainterFactory({
     required this.activeColor,
     required super.samples,
     required super.sampleWidth,
@@ -134,7 +134,7 @@ abstract class ActiveInActiveWaveformPainter extends WaveformPaintersFactory {
 
   /// Get shouldRepaintValue
   bool getShouldRepaintValue(
-    covariant ActiveInActiveWaveformPainter oldDelegate,
+    covariant ActiveInActivePainterFactory oldDelegate,
   ) {
     return activeRatio != oldDelegate.activeRatio ||
         activeColor != oldDelegate.activeColor ||
@@ -148,7 +148,7 @@ abstract class ActiveInActiveWaveformPainter extends WaveformPaintersFactory {
 
   /// Whether the waveform should be rePainted or not.
   @override
-  bool shouldRepaint(covariant ActiveInActiveWaveformPainter oldDelegate) {
+  bool shouldRepaint(covariant ActiveInActivePainterFactory oldDelegate) {
     return getShouldRepaintValue(oldDelegate);
   }
 }
