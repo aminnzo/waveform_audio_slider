@@ -5,8 +5,8 @@
 </p>
 
 
-A UI library for easily adding audio waveforms to your apps, with several customization options.
 This package is a minimal customization of the [flutter_audio_waveforms](https://pub.dev/packages/flutter_audio_waveforms) package available on pub.dev.
+
 Web Demo - [Flutter Audio Waveforms Web Demo](https://aminnzo.github.io/waveform_audio_slider/)
 
 # Getting started
