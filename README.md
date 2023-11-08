@@ -1,4 +1,4 @@
-<img src="https://github.com/aminnzo/waveform_audio_slider/tree/main/example/assets/Logo.jpg?raw=true">
+<img src="https://raw.githubusercontent.com/aminnzo/waveform_audio_slider/main/example/assets/Logo.jpg">
 
 <p align="center">
 	<a href="https://opensource.org/licenses/MIT" rel="noopener" target="_blank"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="MIT License Badge"></a>
@@ -7,7 +7,7 @@
 
 A UI library for easily adding audio waveforms to your apps, with several customization options.
 This package is a minimal customization of the [flutter_audio_waveforms](https://pub.dev/packages/flutter_audio_waveforms) package available on pub.dev.
-<img src="https://github.com/aminnzo/waveform_audio_slider/tree/main/example/assets/example-image.gif?raw=true">
+<img src="https://raw.githubusercontent.com/aminnzo/waveform_audio_slider/main/example/assets/example-image.gif">
 Web Demo - [Flutter Audio Waveforms Web Demo](https://aminnzo.github.io/waveform_audio_slider/)
 
 # Getting started
